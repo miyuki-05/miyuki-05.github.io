@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> To-Do List </title>
+    <link rel = "stylesheet" href = "styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body onload = "loadList()" onunload = "saveList()">
+    <div id = "to-do">
+        <div id = "header">
+            <h1>To-Do List</h1>
+        </div>
+
+        <div id = "to-do form">
+            <input
+            type = "text"
+            class = "to-do-item"
+            name = "input-box"
+            id = "input-box"
+            placeholder = "Add Task"
+            />
+
+            <button type = "button" id = "input-button" onclick = "addTask()">Add Task</button>
+        </div>
+        <br>
+        <div class = "counter-container">
+            <div class = "task-counter">
+                Completed: <span id = "completed-counter"> 0 </span> |
+                Uncompleted: <span id = "uncompleted-counter"> 0 </span>
+            </div>
+        </div>
+
+        <h2> To-Do: </h2>
+        <ul id = "list-container"></ul>
+
+    </div>
+
+    <div id = "clear-tasks" class = "clear" onclick="clearTasks()">
+        <span class="clear-button" onclick="clearTasks()">Clear</span>
+    </div>
+
+    <div id = "edit-task" class="edit">
+        Enter the new task:
+        <div id = "edit form">
+            <input
+            type = "text"
+            class = "edit-item"
+            name = "edit-box"
+            id = "edit-box"
+            placeholder = "Add Task"
+            />
+        </div>
+        <span class="done-button" onclick="this.parentElement.style.display='none';">Done</span>
+        <span class="cancel-button" onclick="this.parentElement.style.display='none';">Cancel</span>
+    </div>
+
+    <div id = "alert" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Please write a task!
+    </div>
+
+    <div id = "confirm-delete" class="confirm">
+        Are you sure you want to delete this task?
+        <span class="yes-button">Yes</span>
+        <span class="no-button" onclick="this.parentElement.style.display='none';">No</span>
+    </div>
+
+    <script type = "text/javascript" src = "script.js"></script>
+</body>
+
+</html>
