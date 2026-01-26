@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+---
+<BaseLayout title="Your Name">
+  <Nav />
+  <main>
+    <h1>Hey, I’m Your Name 👋</h1>
+    <p>
+      I study AI & actuarial science at UNSW and build things on the internet.
+    </p>
+
+    <section>
+      <h2>Featured Writing</h2>
+      <ul>
+        <li><a href="/writing/first-post">Learning ML properly</a></li>
+        <li><a href="#">How I study efficiently</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>📊 Risk modeling simulations</li>
+        <li>🤖 Reinforcement learning grid world</li>
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
