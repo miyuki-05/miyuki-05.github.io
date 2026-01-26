@@ -1,0 +1,15 @@
+---
+const { title = "Your Name" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <slot />
+</body>
+</html>
