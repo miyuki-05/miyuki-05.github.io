@@ -1,4 +1,5 @@
 ---
+import Sidebar from "../components/Sidebar.astro";
 const { title = "Test" } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -6,10 +7,15 @@ const { title = "Test" } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <title>{title}</title>
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="stylesheet" href="styles/global.css" />
 </head>
 <body>
-  <slot />
+  <div class="container">
+    <Sidebar/>
+    <!-- Main content -->
+    <main class="content">
+      <slot />
+    </main>
+  </div>
 </body>
 </html>

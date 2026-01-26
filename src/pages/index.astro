@@ -1,29 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
 ---
-<BaseLayout title="Your Name">
-  <Nav />
+<BaseLayout title="Darren Xing">
   <main>
-    <h1>Hey, I’m Your Name 👋</h1>
+    <div class="home-text">
+    <h1>Hey, I’m Darren Xing. I'm a student in Sydney, Australia and build projects in my spare time.</h1>
     <p>
-      I study AI & actuarial science at UNSW and build things on the internet.
+      I currently study Actuarial Studies and Computer Science at UNSW. I have built many small projects 
+      including a stock market portfolio analysis and risk of ruin as well as well as delving into some ML and LLM projects.
+      I also contributed to the modernisation and rebuilding of the current Museum of Human Diseases Booking System Administration System.
+      I'm also working as an analyst at Everywhere Health, a startup focusing on developing an affordable and asynchronous 3-lead ECG to be used in smartwatches.
     </p>
-
-    <section>
-      <h2>Featured Writing</h2>
-      <ul>
-        <li><a href="/writing/first-post">Learning ML properly</a></li>
-        <li><a href="#">How I study efficiently</a></li>
-      </ul>
-    </section>
 
     <section>
       <h2>Projects</h2>
       <ul>
-        <li>📊 Risk modeling simulations</li>
-        <li>🤖 Reinforcement learning grid world</li>
+        <li><a href="/projects/project1">Project 1</a></li>
+        <li><a href="/projects/project2">Project 2</a></li>
       </ul>
     </section>
+
+    <section>
+      <h2>Other</h2>
+      <ul>
+        <li>Lorem</li>
+        <li>Ipsum</li>
+      </ul>
+    </section>
+    </div>
   </main>
 </BaseLayout>

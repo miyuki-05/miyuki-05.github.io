@@ -1,4 +1,6 @@
 :root {
+  --bg: #fff;
+  --text: #111;
   --muted: #666;
   --accent: #2563eb;
   font-family: system-ui, -apple-system, sans-serif;
@@ -14,7 +16,7 @@ body {
 main {
   max-width: 720px;
   margin: 80px auto;
-  padding: 0 20px;
+  padding: 0 0px;
 }
 
 nav {
@@ -34,11 +36,10 @@ nav a {
   font-weight: 700;
   color: var(--text);
 }
-/* Layout */
+
+/* Container */
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 .container {
@@ -49,36 +50,63 @@ body, html {
 /* Sidebar */
 .sidebar {
   width: 220px;
-  background-color: #222;
-  color: #fff;
+  background-color: whitesmoke;
+  border-right: 1px solid #ddd;
   padding: 2rem 1rem;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
-.sidebar nav ul {
+.sidebar-header h1 {
+  color: #0f0;
+  font-size: 1.2rem;
+  margin: 0 0 2rem 0;
+  font-weight: bold;
+}
+
+/* Section styling */
+.section {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
 }
 
-.sidebar nav li {
-  margin: 1rem 0;
+.section li {
+  margin: 0.5rem 0;
 }
 
-.sidebar nav a {
-  color: #fff;
+.section li a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  color: #111;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
 }
 
-.sidebar nav a:hover {
-  text-decoration: underline;
+.section li a:hover {
+  background-color: #f0f0f0;
+}
+
+.icon {
+  margin-right: 0.6rem;
+}
+
+/* Section titles */
+.section-title {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: #0a0;
+  text-transform: uppercase;
 }
 
 /* Main content */
 .content {
   flex: 1;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: white;
 }
 
 /* Responsive */
@@ -86,9 +114,12 @@ body, html {
   .container {
     flex-direction: column;
   }
-  
+
   .sidebar {
     width: 100%;
-    padding: 1rem;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
   }
 }
+
