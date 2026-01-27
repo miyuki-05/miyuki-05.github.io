@@ -1,0 +1,129 @@
+/*Colours
+Japanese Indigo - 16404D
+Lotion - FCFBFC
+Peekaboo - E6DEE6
+*/
+
+:root {
+  --bg: #FCFBFC;
+  --text: #16404D;
+  --muted: #666;
+  --accent: #2563eb;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+main {
+  max-width: 720px;
+  margin: 5rem auto;
+  padding: 0 0px;
+}
+
+nav {
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items:center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #FCFBFC;
+}
+
+/* Container */
+body, html {
+  font-family: system-ui, sans-serif;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 100vh;
+  background: whitesmoke;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 0;
+  font-size: 0.8rem;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 1023px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Title */
+.sidebar-header {
+  display: block;
+  margin: 0.25rem 0.75rem 1rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #16404D;
+  border-radius: 0.4rem;
+}
+
+/* Nav items */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0rem 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: black;
+  transition: background 0.15s ease;
+}
+
+.sidebar-item:hover {
+  background: #FCFBFC;
+}
+
+.sidebar-item.active {
+  background: #FCFBFC;
+  font-weight: 600;
+}
+
+/* Icons */
+.icon {
+  width: 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Sections */
+.sidebar-section {
+  margin-top: 1.5rem;
+}
+
+.sidebar-section-title {
+  margin: 0.5rem 0.75rem;
+  padding: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #16404D;
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #FCFBFC;
+}
+
+
