@@ -35,7 +35,7 @@ nav {
   border-bottom: 1px solid #FCFBFC;
 }
 
-.container {
+.page-wrap {
   display: flex;
   min-height: 100vh;
 }
