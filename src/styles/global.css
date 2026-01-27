@@ -1,4 +1,6 @@
 :root {
+  --bg: #fff;
+  --text: #111;
   --muted: #666;
   --accent: #2563eb;
   font-family: system-ui, -apple-system, sans-serif;
