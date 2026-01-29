@@ -167,3 +167,12 @@ Need to add hamburger to this.
 .work-desc {
   font-size: 1rem;
 }
+
+.cooking-link {
+  color: blue;
+
+}
+
+.cooking-link:hover {
+  color: purple;
+}
