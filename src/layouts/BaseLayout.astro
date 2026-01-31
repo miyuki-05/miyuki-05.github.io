@@ -7,10 +7,28 @@ const { title = "Test" } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <title>{title}</title>
-  <link rel="stylesheet" href={`${Astro.site}styles/global.css`}/>
+  <link rel="stylesheet" href="/styles/global.css"/>
   <meta name="google-site-verification" content="aO_LhAk1hebqynZCqlhPF4rpZNWdmBSJeaaAoTyWPY4" />
 </head>
 <body>
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+
+  <div class="topbar">
+    <a href="/" class="topbar-header">Darren Xing</a>
+    <button id="hamburger" class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </button>
+  </div>
+  
   <div class="page-wrap">
     <Sidebar/>
     <main class="content">
