@@ -13,12 +13,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
     
     <section>
-    <h2>Work Experience</h2>
+    <h2>Work Experience and Education</h2>
     <div class="timeline">
         <div class="timeline-container">
-            <span class="timeline-dot"></span>
+            <span class="timeline-dot">
+                <img src={`${Astro.site}icons/Everywhere Health.jpg`} class="timeline-icon">
+            </span>
             <div class="timeline-content">
-                <h3> Everywhere Health: Analyst </h3>
+                <h3 class="work-heading"> Everywhere Health: Analyst </h3>
                 <p class="work-time"> Sep 2025-Current</p>
                 <p class="work-desc">
                     Startup focusing on developing an affordable + asynchronous 3-lead ECG leveraging inbuilt smartwatch sensors.
@@ -27,13 +29,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
         </div>
         <div class="timeline-container">
-            <span class="timeline-dot"></span>
+            <span class="timeline-dot">
+                <img src={`${Astro.site}icons/ProEd.png`} class="timeline-icon">
+            </span>
             <div class="timeline-content">
-                <h3> Proficiency Education: Tutor </h3>
+                <h3 class="work-heading"> Proficiency Education: Tutor </h3>
                 <p class="work-time">Feb 2023- Feb 2025</p>
                 <p class="work-desc">
                     Worked as a mathematics tutor for 1-on-1 and group classes for Junior Mathematics, 
                     Mathematics Advanced and Mathematics Extension 1
+                </p>
+            </div>
+        </div>
+        <div class="timeline-container">
+            <span class="timeline-dot">
+                <img src={`${Astro.site}icons/UNSW.png`} class="timeline-icon">
+            </span>
+            <div class="timeline-content">
+                <h3 class="education-heading"> University of New South Wales</h3>
+                <p class="work-time">Feb 2023- Current</p>
+                <p class="work-desc">
+                    Studying a Bachelors of Actuarial Studies and Computer Science
+                    Grade: Distinction
+                </p>
+            </div>
+        </div>
+        <div class="timeline-container">
+            <span class="timeline-dot">
+                <img src={`${Astro.site}icons/JRAHS.png`} class="timeline-icon">
+            </span>
+            <div class="timeline-content">
+                <h3 class="education-heading"> James Ruse Agricultural High School </h3>
+                <p class="work-time">Jan 2017- Sep 2022</p>
+                <p class="work-desc">
+                    Acquired by Higher School Certificate and ATAR
+                    ATAR: 96.25
                 </p>
             </div>
         </div>

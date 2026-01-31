@@ -2,14 +2,32 @@
 Japanese Indigo - 16404D
 Lotion - FCFBFC
 Peekaboo - E6DEE6
+
+Japanese Indigo Monochromatic gradient
+#3d5d68
+#627b84
+#879aa1
+#aebbc0
+#d6dcdf
+
 */
 
 
 :root {
   --bg: #FCFBFC;
   --text: #16404D;
-  --muted: whitesmoke;
-  --accent: #2563eb;
+  --bg_complement: whitesmoke;
+
+  --green1: #16404D;
+  --green2: #3d5d68;
+  --green3: #627b84;
+  --green4: #879aa1;
+  --green5: #aebbc0;
+  --green6: #d6dcdf;
+
+
+  --link: blue;
+  --used-link: purple;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
@@ -23,7 +41,7 @@ body {
 
 main {
   max-width: 720px;
-  margin: 5rem auto;
+  margin: 3rem auto;
   padding: 0 0px;
 }
 
@@ -32,7 +50,18 @@ nav {
   justify-content: space-between;
   align-items:center;
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid #FCFBFC;
+  border-bottom: 1px solid var(--bg);
+}
+
+.page-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
 }
 
 /* Sidebar */
@@ -42,7 +71,7 @@ nav {
   left: 0;
   width: 16rem;
   height: 100vh;
-  background: whitesmoke;
+  background: var(--bg_complement);
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0.75rem 0;
   font-size: 0.8rem;
@@ -66,7 +95,7 @@ Need to add hamburger to this.
   font-weight: 800;
   font-size: 0.9rem;
   text-decoration: none;
-  color: #16404D;
+  color: var(--text);
   border-radius: 0.4rem;
 }
 
@@ -82,11 +111,11 @@ Need to add hamburger to this.
 }
 
 .sidebar-item:hover {
-  background: #FCFBFC;
+  background: var(--bg);
 }
 
 .sidebar-item.active {
-  background: #FCFBFC;
+  background: var(--bg);
   font-weight: 400;
 }
 
@@ -100,7 +129,7 @@ Need to add hamburger to this.
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #16404D;
+  color: var(--text);
 }
 
 /* Icons */
@@ -115,61 +144,147 @@ Need to add hamburger to this.
 .content {
   flex: 1;
   padding: 2rem;
-  background-color: #FCFBFC;
+  background-color: var(--bg);
 }
 
 /* Timeline */
 .timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: #16404D;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
+  border-left:1px solid var(--text);
+  width:50%;
+  height:100%;
+  z-index: 1;
 }
 
 .timeline-container {
-  padding: 10px 40px;
   position: relative;
-  background-color: inherit;
-  width: 50%;
+  padding: 2rem 0;
 }
 
-.timeline-container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #16404D;
-  top: 15px;
+.timeline-content {
+  position: relative;
+  top: -3.25rem;
+  margin-left: 3rem;
+  width: 150%;
+  padding: 0 1.25rem;
+}
+
+.timeline-dot {
+  position:absolute;
+  left: -1.125rem;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
-  z-index: 1;
-  left:50%
+  background: var(--bg);
+  border: 1px solid rgba(0,0,0,0.1);
+  vertical-align: middle; 
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.timeline-container::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid #16404D;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent #16404D transparent transparent;
+.timeline-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+  display: block;
 }
 
-.timeline-container::after {
-  left: -16px;
+.work-heading {
+  color:lightseagreen
 }
+
+.education-heading {
+  color:darkseagreen
+}
+
+.work-time {
+  font-size: 0.875rem;
+  color: lightslategray;
+}
+
+.work-desc {
+  font-size: 1rem;
+}
+
+
+.skills-group {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.skills-heading {
+  display:inline-block;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: var(--green2);
+  border-bottom: 4px solid var(--green3);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background: var(--bg);
+  border: 1px solid var(--green6);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--green3);
+  box-shadow: 0 14px 32px rgba(34, 197, 94, 0.2);
+}
+
+.skill-icon {
+  padding: 0.5rem 0 0 0;
+  text-align: center;
+  font-size: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: var(--green3);
+}
+
+.skill-icon.font-awesome {
+  height: 4rem;
+  width: 4rem;
+}
+
+.skill-icon.simple-icon {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--green1);
+}
+
+.skill-desc {
+  font-size: 0.9rem;
+  color: var(--green2);
+}
+
+.cooking-link {
+  color: var(--accent);
+}
+
+.cooking-link:hover {
+  color: var(--used-link);
+}
+
