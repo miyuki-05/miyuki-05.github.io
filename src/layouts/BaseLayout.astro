@@ -1,23 +1,23 @@
 ---
 import Sidebar from "../components/Sidebar.astro";
-const { title = "Test" } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>{title}</title>
+  <title>{"Darren Xing Portfolio Site"}</title>
   <link rel="stylesheet" href="/styles/global.css"/>
   <meta name="google-site-verification" content="aO_LhAk1hebqynZCqlhPF4rpZNWdmBSJeaaAoTyWPY4" />
 </head>
 <body>
-    <script>
+  <script>
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
 
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
+
   </script>
 
   <div class="topbar">

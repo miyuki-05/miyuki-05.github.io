@@ -288,3 +288,6 @@ Need to add hamburger to this.
   color: var(--used-link);
 }
 
+.filter-menu {
+  display: none;
+}

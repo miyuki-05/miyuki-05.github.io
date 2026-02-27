@@ -1,9 +1,95 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Filter from "../../components/Filter.astro";
+import Searchbar from "../../components/Searchbar.astro";
+import { projects } from "../../data/projectList.js";
 ---
 <BaseLayout title="Projects">
   <h1>Projects</h1>
-  <ul>
-    <li><a href="/projects/first-project">This page is a work in progress</a></li>
-  </ul>
+
+  <h6>Note: project individual pages are still in progress</h6>
+
+  
+  <div class="search-element">
+    <Searchbar/> <Filter/>
+  </div>
+
+  <div class="projects">
+  {projects.map(project => (
+    <a
+    key={project.subpage}
+      href={`/projects/${project.subpage}`}
+      class="project"
+      data-title={project.title}
+      data-description={project.description}
+      data-tags={project.tags.join(",")}
+    >
+      <h3>{project.title}</h3>
+      <p>{project.description}</p>
+    </a>
+    ))}
+  </div>
 </BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("searchBar");
+    const tagButtons = document.querySelectorAll(".tag-btn");
+    const projectsEl = document.querySelectorAll(".project");
+    const toggleBtn = document.getElementById("toggleTags");
+    const tagFilters = document.getElementById("tagFilters");
+
+    let activeTag = "all";
+
+    toggleBtn.addEventListener("click", () => {
+      tagFilters.classList.toggle("hidden");
+    });
+
+  function filterProjects() {
+    const searchTerm = searchBar.value.toLowerCase();
+
+    projectsEl.forEach(project => {
+      const title = project.dataset.title.toLowerCase();
+      const description = project.dataset.description.toLowerCase();
+      const tags = project.dataset.tags.toLowerCase();
+
+      const matchesSearch =
+        title.includes(searchTerm) ||
+        description.includes(searchTerm) ||
+        tags.includes(searchTerm);
+
+      const matchesTag =
+        activeTag === "all" ||
+        tags.split(",").includes(activeTag);
+
+      project.style.display =
+        matchesSearch && matchesTag ? "block" : "none";
+    });
+  }
+
+  searchBar.addEventListener("input", filterProjects);
+
+  tagButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      tagButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      activeTag = button.dataset.tag;
+      filterProjects();
+    });
+  });
+});
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const tag = urlParams.get('tag');
+
+  if (tag) {
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+      const tags = project.dataset.tags.split(",");
+      if (!tags.includes(tag)) {
+        project.style.display = "none";
+      }
+    });
+  }
+</script>
